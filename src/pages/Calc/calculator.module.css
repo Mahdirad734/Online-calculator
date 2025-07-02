@@ -1,0 +1,176 @@
+/* calculator.module.css */
+:root {
+  --bg-light: #eeefef;
+  --bg-dark: #2b2e33;
+  --panel-bg: #ffffff;
+  --button-bg: #e0e3e7;
+  --button-hover: #c8cdd2;
+  --button-active: #b0b6bc;
+  --button-op: #ff9800;
+  --button-op-hover: #fb8c00;
+  --button-eq: #4caf50;
+  --button-eq-hover: #43a047;
+  --button-clear: #f44336;
+  --button-clear-hover: #e53935;
+  --text-primary: #222;
+  --text-secondary: #555;
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-light);
+  font-family: var(--font);
+}
+
+.bodyCalc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 75vh;
+}
+
+.titleCalculator {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.CalculatorWrapper {
+  background: var(--panel-bg);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 360px;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 1rem;
+}
+
+/* Display */
+.CalculatorWrapper>div:first-child h2 {
+  margin: 0;
+  padding: 1rem;
+  background: var(--bg-light);
+  border-radius: 0.5rem;
+  text-align: right;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  overflow-wrap: break-word;
+}
+
+.clearWrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.clearWrapper button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.clearWrapper button:first-child {
+  background: var(--button-clear);
+  color: #fff;
+}
+
+.clearWrapper button:first-child:hover {
+  background: var(--button-clear-hover);
+}
+
+.clearWrapper button:last-child {
+  background: var(--button-bg);
+  color: var(--text-secondary);
+}
+
+.clearWrapper button:last-child:hover {
+  background: var(--button-hover);
+}
+
+.clearWrapper button:active {
+  transform: scale(0.97);
+}
+
+/* Button Rows */
+.CalculatorWrapper>div:nth-child(n+3) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.CalculatorWrapper button {
+  padding: 0.75rem 0;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--button-bg);
+  color: var(--text-primary);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.CalculatorWrapper button:hover {
+  background: var(--button-hover);
+}
+
+.CalculatorWrapper button:active {
+  transform: scale(0.97);
+}
+
+/* Operators */
+.CalculatorWrapper button.operator {
+  background: var(--button-op);
+  color: #fff;
+}
+
+.CalculatorWrapper button.operator:hover {
+  background: var(--button-op-hover);
+}
+
+/* Equals */
+.lastNumberBtn {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.lastNumberBtn button:last-child {
+  background: var(--button-eq);
+  color: #fff;
+}
+
+.lastNumberBtn button:last-child:hover {
+  background: var(--button-eq-hover);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .titleCalculator {
+    font-size: 1.75rem;
+  }
+
+  .CalculatorWrapper {
+    padding: 1rem;
+  }
+
+  .CalculatorWrapper>div:first-child h2 {
+    font-size: 1.5rem;
+  }
+
+  .CalculatorWrapper button {
+    font-size: 1.25rem;
+  }
+}
